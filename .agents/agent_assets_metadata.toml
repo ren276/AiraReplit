@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "sYzTtjxsvHEbYeg-rDwL5"
+uri = "file://artifacts/aira/assets/images/icon.png"
+type = "image"
+title = "aira app icon"
