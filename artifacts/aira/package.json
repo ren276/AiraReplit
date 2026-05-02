@@ -58,7 +58,6 @@
     "zod-validation-error": "^3.4.0"
   },
   "dependencies": {
-    "expo-build-properties": "^55.0.13",
     "react-native-health": "^1.19.0",
     "react-native-health-connect": "^3.5.0"
   }
