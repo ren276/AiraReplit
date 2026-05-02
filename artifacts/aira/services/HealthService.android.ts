@@ -1,4 +1,5 @@
 import {
+  getGrantedPermissions,
   getSdkStatus,
   initialize,
   readRecords,
@@ -32,6 +33,9 @@ const PERMISSIONS = [
   { accessType: "read" as const, recordType: "Steps" as const },
 ];
 
+// Minimum set — if we have at least these we can compute a readiness score
+const MINIMUM_RECORD_TYPES = ["HeartRate", "SleepSession"];
+
 class AndroidHealthService implements IHealthService {
   async isAvailable(): Promise<boolean> {
     try {
@@ -46,10 +50,20 @@ class AndroidHealthService implements IHealthService {
     try {
       const ok = await initialize();
       if (!ok) return { granted: false, partial: false };
+
+      // Show the Health Connect permission dialog
       const granted = await requestPermission(PERMISSIONS);
-      const all = PERMISSIONS.length;
+      const grantedTypes = granted.map((p) => p.recordType);
       const got = granted.length;
-      return { granted: got === all, partial: got > 0 };
+
+      // Accept partial grants — even HR + Sleep gives a usable score
+      const hasMinimum = MINIMUM_RECORD_TYPES.every((t) =>
+        grantedTypes.includes(t)
+      );
+      return {
+        granted: hasMinimum,
+        partial: got > 0,
+      };
     } catch {
       return { granted: false, partial: false };
     }
@@ -57,7 +71,15 @@ class AndroidHealthService implements IHealthService {
 
   async checkPermissions(): Promise<boolean> {
     try {
-      return await initialize();
+      const ok = await initialize();
+      if (!ok) return false;
+
+      // Actually verify the user has granted the minimum required permissions
+      const granted = await getGrantedPermissions();
+      const grantedTypes = granted.map((p) => p.recordType);
+
+      // Need at least heart rate and sleep to be useful
+      return MINIMUM_RECORD_TYPES.every((t) => grantedTypes.includes(t));
     } catch {
       return false;
     }

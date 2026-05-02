@@ -82,8 +82,9 @@ export function HealthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(true);
     setSyncProgress("connecting");
     try {
-      const { granted } = await healthService.requestPermissions();
-      if (!granted) {
+      const { granted, partial } = await healthService.requestPermissions();
+      // Accept full or partial grants — even HR + Sleep alone gives a useful score
+      if (!granted && !partial) {
         applyData(getDemoData());
         setIsLoading(false);
         setSyncProgress(null);

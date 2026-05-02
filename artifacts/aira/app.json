@@ -21,6 +21,8 @@
       }
     },
     "android": {
+      "package": "com.aira.health",
+      "minSdkVersion": 26,
       "permissions": [
         "android.permission.health.READ_HEART_RATE",
         "android.permission.health.READ_HEART_RATE_VARIABILITY",

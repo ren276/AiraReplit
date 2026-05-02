@@ -1,5 +1,3 @@
-import { Platform } from "react-native";
-
 import { generateInsight } from "@/algorithms/insights";
 import { avgHRV, calculateBaseline } from "@/algorithms/hrv";
 import { analyzeSleep, pickBestSleepSession } from "@/algorithms/sleep";
@@ -63,17 +61,20 @@ function estimateRHRFromNightly(
 
   const nightly = samples.filter(
     (s) =>
-      s.timestamp >= nightStart && s.timestamp <= nightEnd && s.bpm > 30 && s.bpm < 120
+      s.timestamp >= nightStart &&
+      s.timestamp <= nightEnd &&
+      s.bpm > 30 &&
+      s.bpm < 120
   );
   if (!nightly.length) return null;
   const sorted = nightly.map((s) => s.bpm).sort((a, b) => a - b);
   return sorted[Math.floor(sorted.length * 0.1)];
 }
 
-function demoForDay(dateStr: string): ProcessedDayData {
-  const raw = generateDailyData(dateStr);
+function demoForDay(ds: string): ProcessedDayData {
+  const raw = generateDailyData(ds);
   return {
-    date: dateStr,
+    date: ds,
     metrics: {
       hrv: raw.hrv,
       restingHeartRate: raw.restingHeartRate,
@@ -98,6 +99,13 @@ function demoForDay(dateStr: string): ProcessedDayData {
 
 export function getDemoData(): ProcessedDayData[] {
   return getLast30DayStrings().map(demoForDay);
+}
+
+/** Safe baseline: falls back to a neutral 50/10 if no samples */
+function safeBaseline(values: number[]): { avg: number; std: number } {
+  const clean = values.filter((v) => v > 0);
+  if (!clean.length) return { avg: 0, std: 1 };
+  return calculateBaseline(clean);
 }
 
 export async function runSyncPipeline(
@@ -142,7 +150,7 @@ export async function runSyncPipeline(
   const hrvByDay = groupByDay(hrvSamples, (s) => s.timestamp);
   const hrByDay = groupByDay(hrSamples, (s) => s.timestamp);
   const rhrByDay = groupByDay(rhrSamples, (s) => s.timestamp);
-  const sleepByDay: Record<string, ReturnType<typeof pickBestSleepSession>> = {};
+  const sleepByDay: Record<string, (typeof sleepSessions)[0]> = {};
 
   for (const session of sleepSessions) {
     const key = dateStr(session.endTime);
@@ -160,10 +168,13 @@ export async function runSyncPipeline(
     const hrv = avgHRV((hrvByDay[d] ?? []).map((s) => s.sdnn));
 
     const rhrFromExplicit = rhrByDay[d]?.[rhrByDay[d].length - 1]?.bpm ?? null;
-    const allHR = [...(hrByDay[d] ?? []), ...(hrSamples.filter((s) => dateStr(s.timestamp) === d))];
+    const allHR = [
+      ...(hrByDay[d] ?? []),
+      ...hrSamples.filter((s) => dateStr(s.timestamp) === d),
+    ];
     const rhr = rhrFromExplicit ?? estimateRHRFromNightly(allHR, d);
 
-    const sleep = sleepByDay[d] ? analyzeSleep(sleepByDay[d]!) : null;
+    const sleep = sleepByDay[d] ? analyzeSleep(sleepByDay[d]) : null;
 
     return {
       hrv,
@@ -179,14 +190,19 @@ export async function runSyncPipeline(
     };
   });
 
-  const baseline: Baseline = {
-    hrv: calculateBaseline(rawMetrics.map((m) => m.hrv ?? 0).filter(Boolean)),
-    rhr: calculateBaseline(rawMetrics.map((m) => m.restingHeartRate ?? 0).filter(Boolean)),
-  };
-
-  if (!baseline.hrv.avg) {
+  // Check we have at least some real data — not every wearable reports HRV
+  const hasSleepData = rawMetrics.some((m) => m.sleepHours != null);
+  const hasHRData = rawMetrics.some((m) => m.restingHeartRate != null);
+  if (!hasSleepData && !hasHRData) {
+    // No usable data at all — device synced Health Connect with no records
     return getDemoData();
   }
+
+  // Build baselines — safe even if some fields are missing (e.g. no HRV device)
+  const baseline: Baseline = {
+    hrv: safeBaseline(rawMetrics.map((m) => m.hrv ?? 0)),
+    rhr: safeBaseline(rawMetrics.map((m) => m.restingHeartRate ?? 0)),
+  };
 
   const processed: ProcessedDayData[] = rawMetrics.map((metrics, i) => {
     const { score, status, breakdown } = calculateReadiness(
