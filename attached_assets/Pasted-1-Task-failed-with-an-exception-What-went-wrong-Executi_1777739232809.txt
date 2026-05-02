@@ -1,0 +1,1960 @@
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':app:processDebugMainManifest'.
+> Manifest merger failed : uses-sdk:minSdkVersion 24 cannot be smaller than version 26 declared in library [androidx.health.connect:connect-client:1.1.0-alpha11] C:\Users\sande\.gradle\caches\8.14.3\transforms\a5a6cb84d4e6d0e3030d168bd9e27bf8\transformed\connect-client-1.1.0-alpha11\AndroidManifest.xml as the library might be using APIs not available in 24
+        Suggestion: use a compatible library with a minSdk of at most 24,
+                or increase this project's minSdk version to at least 26,
+                or use tools:overrideLibrary="androidx.health.connect.client" to force usage (may lead to runtime failures)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':react-native-worklets:buildCMakeDebug[arm64-v8a][worklets]'.
+> com.android.ide.common.process.ProcessException: ninja: Entering directory `E:\AiraReplit\node_modules\.pnpm\react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f\node_modules\react-native-worklets\android\.cxx\Debug\592e6p64\arm64-v8a'
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  [0/2] Re-checking globbed directories...
+  [1/2] Re-running CMake...
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a
+  
+  C++ build system [build] failed while executing:
+      @echo off
+      "C:\\Users\\sande\\AppData\\Local\\Android\\Sdk\\cmake\\3.22.1\\bin\\ninja.exe" ^
+        -C ^
+        "E:\\AiraReplit\\node_modules\\.pnpm\\react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f\\node_modules\\react-native-worklets\\android\\.cxx\\Debug\\592e6p64\\arm64-v8a" ^
+        worklets
+    from E:\AiraReplit\node_modules\.pnpm\react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f\node_modules\react-native-worklets\android
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/SharedItems/SynchronizableAccess.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/EventHandlerRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/AnimationFrameQueue/AnimationFrameBatchinator.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Resources/SynchronizableUnpacker.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/JSIWorkletsModuleProxy.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  CMake Warning in CMakeLists.txt:
+    The object file directory
+  
+      E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+  
+    has 193 characters.  The maximum full path to an object file is 250
+    characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+  
+      E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/Registries/WorkletRuntimeRegistry.cpp.o
+  
+    cannot be safely placed under this directory.  The build may not work
+    correctly.
+  
+  
+  ninja: error: manifest 'build.ninja' still dirty after 100 tries
+  
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 30s
+282 actionable tasks: 114 executed, 144 from cache, 24 up-to-date
+Error: X:\artifacts\aira\android\gradlew.bat app:assembleDebug -x lint -x test --configure-on-demand --build-cache -PreactNativeDevServerPort=8081 -PreactNativeArchitectures=arm64-v8a,armeabi-v7a exited with non-zero code: 1
+Error: X:\artifacts\aira\android\gradlew.bat app:assembleDebug -x lint -x test --configure-on-demand --build-cache -PreactNativeDevServerPort=8081 -PreactNativeArchitectures=arm64-v8a,armeabi-v7a exited with non-zero code: 1
+    at ChildProcess.completionListener (E:\AiraReplit\node_modules\.pnpm\@expo+spawn-async@1.7.2\node_modules\@expo\spawn-async\src\spawnAsync.ts:67:13)
+    at Object.onceWrapper (node:events:633:26)
+    at ChildProcess.emit (node:events:518:28)
+    at ChildProcess.cp.emit (E:\AiraReplit\node_modules\.pnpm\cross-spawn@7.0.6\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:304:5)
+    ...
+    at spawnAsync (E:\AiraReplit\node_modules\.pnpm\@expo+spawn-async@1.7.2\node_modules\@expo\spawn-async\src\spawnAsync.ts:28:21)
+    at spawnGradleAsync (E:\AiraReplit\node_modules\.pnpm\@expo+cli@54.0.24_expo-rout_a5b3c719bb5ccdac93692d80fc3c093b\node_modules\@expo\cli\src\start\platforms\android\gradle.ts:134:28)                                                                                                                                                                             
+    at assembleAsync (E:\AiraReplit\node_modules\.pnpm\@expo+cli@54.0.24_expo-rout_a5b3c719bb5ccdac93692d80fc3c093b\node_modules\@expo\cli\src\start\platforms\android\gradle.ts:83:16)                                                                                                                                                                                 
+    at runAndroidAsync (E:\AiraReplit\node_modules\.pnpm\@expo+cli@54.0.24_expo-rout_a5b3c719bb5ccdac93692d80fc3c093b\node_modules\@expo\cli\src\run\android\runAndroidAsync.ts:62:24)                                                                                                  
