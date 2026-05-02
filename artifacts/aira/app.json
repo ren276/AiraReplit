@@ -29,6 +29,11 @@
         "android.permission.health.READ_SLEEP",
         "android.permission.health.READ_STEPS",
         "android.permission.health.READ_RESTING_HEART_RATE"
+      ],
+      "intentFilters": [
+        {
+          "action": "androidx.health.ACTION_SHOW_PERMISSIONS_RATIONALE"
+        }
       ]
     },
     "web": {
