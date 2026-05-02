@@ -10,12 +10,13 @@ import {
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import CalendarHeatmap from "@/components/CalendarHeatmap";
 import SimpleChart from "@/components/SimpleChart";
 import { useHealth } from "@/context/HealthContext";
 import { useColors } from "@/hooks/useColors";
 import type { ProcessedDayData } from "@/types/health";
 
-type MetricKey = "sleep" | "heartRate" | "steps" | "hrv";
+type MetricKey = "readiness" | "sleep" | "heartRate" | "steps" | "hrv";
 
 const METRICS: {
   key: MetricKey;
@@ -25,6 +26,14 @@ const METRICS: {
   getValue: (d: ProcessedDayData) => number;
   format: (v: number) => string;
 }[] = [
+  {
+    key: "readiness",
+    label: "Readiness",
+    color: "#00D4AA",
+    unit: "score",
+    getValue: (d) => d.readiness.score,
+    format: (v) => Math.round(v).toString(),
+  },
   {
     key: "sleep",
     label: "Sleep",
@@ -68,7 +77,7 @@ const STATUS_COLORS = {
 export default function TrendsScreen() {
   const colors = useColors();
   const { last7Days, history } = useHealth();
-  const [selected, setSelected] = useState<MetricKey>("sleep");
+  const [selected, setSelected] = useState<MetricKey>("readiness");
   const insets = useSafeAreaInsets();
   const { width } = useWindowDimensions();
 
@@ -87,6 +96,23 @@ export default function TrendsScreen() {
   const avg = validData.length ? validData.reduce((a, b) => a + b, 0) / validData.length : 0;
   const min = validData.length ? Math.min(...validData) : 0;
   const max = validData.length ? Math.max(...validData) : 0;
+
+  // Trend direction for selected metric over 7 days
+  const trendDir =
+    validData.length >= 3
+      ? validData[validData.length - 1] > validData[0]
+        ? "up"
+        : validData[validData.length - 1] < validData[0]
+          ? "down"
+          : "flat"
+      : "flat";
+
+  const trendLabel =
+    trendDir === "up" ? "Improving" : trendDir === "down" ? "Declining" : "Stable";
+  const trendColor =
+    selected === "heartRate"
+      ? trendDir === "up" ? "#EF4444" : "#22C55E"
+      : trendDir === "up" ? "#22C55E" : trendDir === "down" ? "#EF4444" : "#6B7A99";
 
   return (
     <ScrollView
@@ -137,17 +163,24 @@ export default function TrendsScreen() {
       </ScrollView>
 
       <View
-        style={[
-          styles.chartCard,
-          { backgroundColor: colors.card, borderColor: colors.border },
-        ]}
+        style={[styles.chartCard, { backgroundColor: colors.card, borderColor: colors.border }]}
       >
-        <Text style={[styles.chartTitle, { color: colors.foreground }]}>
-          {metric.label}{" "}
-          <Text style={{ color: colors.mutedForeground, fontSize: 13 }}>
-            ({metric.unit})
+        <View style={styles.chartHeader}>
+          <Text style={[styles.chartTitle, { color: colors.foreground }]}>
+            {metric.label}{" "}
+            <Text style={{ color: colors.mutedForeground, fontSize: 13 }}>
+              ({metric.unit})
+            </Text>
           </Text>
-        </Text>
+          <View
+            style={[
+              styles.trendBadge,
+              { backgroundColor: trendColor + "22", borderColor: trendColor + "44" },
+            ]}
+          >
+            <Text style={[styles.trendText, { color: trendColor }]}>{trendLabel}</Text>
+          </View>
+        </View>
         <SimpleChart
           data={data}
           labels={labels}
@@ -165,22 +198,22 @@ export default function TrendsScreen() {
         ].map((s) => (
           <View
             key={s.label}
-            style={[
-              styles.statCard,
-              { backgroundColor: colors.card, borderColor: colors.border },
-            ]}
+            style={[styles.statCard, { backgroundColor: colors.card, borderColor: colors.border }]}
           >
-            <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>
-              {s.label}
-            </Text>
-            <Text style={[styles.statValue, { color: metric.color }]}>
-              {s.value}
-            </Text>
-            <Text style={[styles.statUnit, { color: colors.mutedForeground }]}>
-              {metric.unit}
-            </Text>
+            <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>{s.label}</Text>
+            <Text style={[styles.statValue, { color: metric.color }]}>{s.value}</Text>
+            <Text style={[styles.statUnit, { color: colors.mutedForeground }]}>{metric.unit}</Text>
           </View>
         ))}
+      </View>
+
+      <View style={styles.section}>
+        <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>
+          30-DAY CALENDAR
+        </Text>
+        <View style={[styles.calCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+          <CalendarHeatmap data={history} />
+        </View>
       </View>
 
       <View style={styles.section}>
@@ -246,14 +279,18 @@ const styles = StyleSheet.create({
   pill: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 24, borderWidth: 1 },
   pillText: { fontSize: 13 },
   chartCard: { marginHorizontal: 24, borderRadius: 16, padding: 16, borderWidth: 1, marginBottom: 16 },
-  chartTitle: { fontSize: 15, fontFamily: "Inter_600SemiBold", marginBottom: 8 },
+  chartHeader: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", marginBottom: 8 },
+  chartTitle: { fontSize: 15, fontFamily: "Inter_600SemiBold" },
+  trendBadge: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: 12, borderWidth: 1 },
+  trendText: { fontSize: 11, fontFamily: "Inter_600SemiBold" },
   statsRow: { flexDirection: "row", paddingHorizontal: 24, gap: 12, marginBottom: 24 },
   statCard: { flex: 1, borderRadius: 14, padding: 14, borderWidth: 1, alignItems: "center", gap: 3 },
   statLabel: { fontSize: 10, fontFamily: "Inter_600SemiBold", letterSpacing: 1.5 },
   statValue: { fontSize: 20, fontFamily: "Inter_700Bold" },
   statUnit: { fontSize: 11, fontFamily: "Inter_400Regular" },
-  section: { paddingHorizontal: 24, gap: 10 },
+  section: { paddingHorizontal: 24, gap: 10, marginBottom: 24 },
   sectionLabel: { fontSize: 11, fontFamily: "Inter_600SemiBold", letterSpacing: 2, marginBottom: 2 },
+  calCard: { borderRadius: 16, padding: 16, borderWidth: 1 },
   historyItem: { borderRadius: 14, padding: 14, borderWidth: 1, flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
   historyLeft: { gap: 3 },
   historyDate: { fontSize: 14, fontFamily: "Inter_500Medium" },

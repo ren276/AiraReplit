@@ -13,25 +13,20 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import InsightCard from "@/components/InsightCard";
 import MetricCard from "@/components/MetricCard";
 import ReadinessRing from "@/components/ReadinessRing";
+import RecoveryTips from "@/components/RecoveryTips";
+import SleepDonut from "@/components/SleepDonut";
 import { useHealth } from "@/context/HealthContext";
 import { useColors } from "@/hooks/useColors";
 
 function SkeletonBox({ height = 80, width = "100%" as any, borderRadius = 16 }) {
   return (
-    <View
-      style={{
-        height,
-        width,
-        borderRadius,
-        backgroundColor: "#141926",
-      }}
-    />
+    <View style={{ height, width, borderRadius, backgroundColor: "#141926" }} />
   );
 }
 
 export default function TodayScreen() {
   const colors = useColors();
-  const { today, isLoading, isDemoMode, refresh } = useHealth();
+  const { today, last7Days, isLoading, isDemoMode, refresh } = useHealth();
   const insets = useSafeAreaInsets();
 
   const topPad = Platform.OS === "web" ? 67 : insets.top + 8;
@@ -45,6 +40,18 @@ export default function TodayScreen() {
   const hour = new Date().getHours();
   const greeting =
     hour < 12 ? "Good Morning" : hour < 17 ? "Good Afternoon" : "Good Evening";
+
+  // Week comparison
+  const weekScores = last7Days.slice(0, -1).map((d) => d.readiness.score);
+  const weekAvg = weekScores.length
+    ? Math.round(weekScores.reduce((a, b) => a + b, 0) / weekScores.length)
+    : null;
+  const todayDiff = today && weekAvg != null ? today.readiness.score - weekAvg : null;
+
+  const hasSleepStages =
+    today != null &&
+    (today.metrics.deepSleepMinutes != null ||
+      today.metrics.remSleepMinutes != null);
 
   if (isLoading && !today) {
     return (
@@ -112,6 +119,34 @@ export default function TodayScreen() {
                   ? "Moderate recovery — pace yourself"
                   : "Your body is asking for rest"}
             </Text>
+
+            {todayDiff != null && (
+              <View
+                style={[
+                  styles.weekBadge,
+                  {
+                    backgroundColor:
+                      todayDiff >= 0 ? "#22C55E18" : "#EF444418",
+                    borderColor:
+                      todayDiff >= 0 ? "#22C55E40" : "#EF444440",
+                  },
+                ]}
+              >
+                <Feather
+                  name={todayDiff >= 0 ? "arrow-up" : "arrow-down"}
+                  size={11}
+                  color={todayDiff >= 0 ? "#22C55E" : "#EF4444"}
+                />
+                <Text
+                  style={[
+                    styles.weekBadgeText,
+                    { color: todayDiff >= 0 ? "#22C55E" : "#EF4444" },
+                  ]}
+                >
+                  {Math.abs(todayDiff)}pts vs 7-day avg ({weekAvg})
+                </Text>
+              </View>
+            )}
           </>
         )}
       </View>
@@ -134,24 +169,9 @@ export default function TodayScreen() {
             </Text>
             <View style={[styles.breakdownCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
               {[
-                {
-                  label: "HRV",
-                  score: today.readiness.breakdown.hrv,
-                  color: "#60A5FA",
-                  icon: "activity" as const,
-                },
-                {
-                  label: "Resting HR",
-                  score: today.readiness.breakdown.rhr,
-                  color: "#FF6B6B",
-                  icon: "heart" as const,
-                },
-                {
-                  label: "Sleep",
-                  score: today.readiness.breakdown.sleep,
-                  color: "#818CF8",
-                  icon: "moon" as const,
-                },
+                { label: "HRV", score: today.readiness.breakdown.hrv, color: "#60A5FA", icon: "activity" as const },
+                { label: "Resting HR", score: today.readiness.breakdown.rhr, color: "#FF6B6B", icon: "heart" as const },
+                { label: "Sleep", score: today.readiness.breakdown.sleep, color: "#818CF8", icon: "moon" as const },
               ].map((item) => (
                 <View key={item.label} style={styles.breakdownRow}>
                   <View style={styles.breakdownLeft}>
@@ -177,6 +197,22 @@ export default function TodayScreen() {
               ))}
             </View>
           </View>
+
+          {hasSleepStages && (
+            <View style={styles.section}>
+              <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>
+                SLEEP BREAKDOWN
+              </Text>
+              <View style={[styles.sleepCard, { backgroundColor: colors.card, borderColor: colors.border }]}>
+                <SleepDonut
+                  deepMinutes={today.metrics.deepSleepMinutes ?? 0}
+                  remMinutes={today.metrics.remSleepMinutes ?? 0}
+                  lightMinutes={today.metrics.lightSleepMinutes ?? 0}
+                  awakeMinutes={today.metrics.awakeMinutes ?? 0}
+                />
+              </View>
+            </View>
+          )}
 
           <View style={styles.section}>
             <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>
@@ -214,30 +250,23 @@ export default function TodayScreen() {
               <MetricCard
                 icon="trending-up"
                 label="Steps"
-                value={today.metrics.steps > 0 ? today.metrics.steps.toLocaleString() : "--"}
+                value={
+                  today.metrics.steps > 0
+                    ? today.metrics.steps.toLocaleString()
+                    : "--"
+                }
                 unit=""
                 color="#34D399"
                 subtitle="steps today"
               />
             </View>
-            {(today.metrics.deepSleepMinutes != null || today.metrics.remSleepMinutes != null) && (
-              <View style={styles.row}>
-                <MetricCard
-                  icon="moon"
-                  label="Deep Sleep"
-                  value={today.metrics.deepSleepMinutes?.toString() ?? "--"}
-                  unit="min"
-                  color="#6366F1"
-                />
-                <MetricCard
-                  icon="eye"
-                  label="REM Sleep"
-                  value={today.metrics.remSleepMinutes?.toString() ?? "--"}
-                  unit="min"
-                  color="#A78BFA"
-                />
-              </View>
-            )}
+          </View>
+
+          <View style={styles.section}>
+            <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>
+              RECOVERY TIPS
+            </Text>
+            <RecoveryTips day={today} />
           </View>
         </>
       )}
@@ -267,86 +296,31 @@ const styles = StyleSheet.create({
     color: "#F59E0B",
     flex: 1,
   },
-  header: {
-    paddingHorizontal: 24,
-    marginBottom: 4,
-  },
-  date: {
-    fontSize: 13,
-    fontFamily: "Inter_400Regular",
-    letterSpacing: 0.3,
-  },
-  greeting: {
-    fontSize: 28,
-    fontFamily: "Inter_700Bold",
-    lineHeight: 36,
-    marginTop: 2,
-  },
-  ringWrap: {
+  header: { paddingHorizontal: 24, marginBottom: 4 },
+  date: { fontSize: 13, fontFamily: "Inter_400Regular", letterSpacing: 0.3 },
+  greeting: { fontSize: 28, fontFamily: "Inter_700Bold", lineHeight: 36, marginTop: 2 },
+  ringWrap: { alignItems: "center", paddingVertical: 20, gap: 10 },
+  ringCaption: { fontSize: 13, fontFamily: "Inter_400Regular", textAlign: "center" },
+  weekBadge: {
+    flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 20,
-    gap: 10,
-  },
-  ringCaption: {
-    fontSize: 13,
-    fontFamily: "Inter_400Regular",
-    textAlign: "center",
-  },
-  section: {
-    paddingHorizontal: 24,
-    marginBottom: 24,
-    gap: 12,
-  },
-  sectionLabel: {
-    fontSize: 11,
-    fontFamily: "Inter_600SemiBold",
-    letterSpacing: 2,
-  },
-  breakdownCard: {
-    borderRadius: 16,
-    padding: 16,
+    gap: 5,
+    paddingHorizontal: 12,
+    paddingVertical: 5,
+    borderRadius: 20,
     borderWidth: 1,
-    gap: 14,
   },
-  breakdownRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  breakdownLeft: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-    width: 90,
-  },
-  breakdownLabel: {
-    fontSize: 13,
-    fontFamily: "Inter_500Medium",
-  },
-  breakdownRight: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-  },
-  barTrack: {
-    flex: 1,
-    height: 6,
-    borderRadius: 3,
-    overflow: "hidden",
-  },
-  barFill: {
-    height: 6,
-    borderRadius: 3,
-  },
-  breakdownScore: {
-    fontSize: 13,
-    fontFamily: "Inter_700Bold",
-    width: 28,
-    textAlign: "right",
-  },
-  row: {
-    flexDirection: "row",
-    gap: 12,
-  },
+  weekBadgeText: { fontSize: 11, fontFamily: "Inter_500Medium" },
+  section: { paddingHorizontal: 24, marginBottom: 24, gap: 12 },
+  sectionLabel: { fontSize: 11, fontFamily: "Inter_600SemiBold", letterSpacing: 2 },
+  breakdownCard: { borderRadius: 16, padding: 16, borderWidth: 1, gap: 14 },
+  breakdownRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  breakdownLeft: { flexDirection: "row", alignItems: "center", gap: 8, width: 90 },
+  breakdownLabel: { fontSize: 13, fontFamily: "Inter_500Medium" },
+  breakdownRight: { flex: 1, flexDirection: "row", alignItems: "center", gap: 10 },
+  barTrack: { flex: 1, height: 6, borderRadius: 3, overflow: "hidden" },
+  barFill: { height: 6, borderRadius: 3 },
+  breakdownScore: { fontSize: 13, fontFamily: "Inter_700Bold", width: 28, textAlign: "right" },
+  sleepCard: { borderRadius: 16, padding: 16, borderWidth: 1 },
+  row: { flexDirection: "row", gap: 12 },
 });
