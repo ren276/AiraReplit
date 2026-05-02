@@ -26,6 +26,7 @@ function mapStage(stage: HealthConnectStage): SleepStageEntry["stage"] {
 }
 
 const PERMISSIONS = [
+  { accessType: "read" as const, recordType: "HeartRateVariabilityRmssd" as const },
   { accessType: "read" as const, recordType: "HeartRate" as const },
   { accessType: "read" as const, recordType: "RestingHeartRate" as const },
   { accessType: "read" as const, recordType: "SleepSession" as const },
@@ -50,12 +51,10 @@ class AndroidHealthService implements IHealthService {
       const ok = await initialize();
       if (!ok) return { granted: false, partial: false };
 
-      // Show the Health Connect permission dialog
       const granted = await requestPermission(PERMISSIONS);
       const grantedTypes = granted.map((p) => p.recordType);
       const got = granted.length;
 
-      // Accept partial grants — even HR + Sleep gives a usable score
       const hasMinimum = MINIMUM_RECORD_TYPES.every((t) =>
         grantedTypes.includes(t)
       );
@@ -73,11 +72,9 @@ class AndroidHealthService implements IHealthService {
       const ok = await initialize();
       if (!ok) return false;
 
-      // Actually verify the user has granted the minimum required permissions
       const granted = await getGrantedPermissions();
       const grantedTypes = granted.map((p) => p.recordType);
 
-      // Need at least heart rate and sleep to be useful
       return MINIMUM_RECORD_TYPES.every((t) => grantedTypes.includes(t));
     } catch {
       return false;
@@ -94,7 +91,7 @@ class AndroidHealthService implements IHealthService {
 
   async getHRVSamples(startDate: Date, endDate: Date): Promise<HRVSample[]> {
     try {
-      const result = await readRecords("HeartRateVariabilitySdnn", {
+      const result = await readRecords("HeartRateVariabilityRmssd", {
         timeRangeFilter: this.timeFilter(startDate, endDate),
       });
       return result.records.map((r) => ({
