@@ -4,18 +4,25 @@ module.exports = function withHealthConnectActivity(config) {
   return withMainActivity(config, (mod) => {
     let contents = mod.modResults.contents;
 
-    // 1. Add import if missing
+    const delegateCall =
+      "HealthConnectPermissionDelegate.setPermissionDelegate(this)";
+
+    // Already applied — nothing to do
+    if (contents.includes(delegateCall)) {
+      return mod;
+    }
+
+    // 1. Add HealthConnectPermissionDelegate import
     const importLine =
       "import dev.matinzd.healthconnect.permissions.HealthConnectPermissionDelegate";
     if (!contents.includes(importLine)) {
-      // Insert after the package declaration line
       contents = contents.replace(
         /^(package .+)(\r?\n)/m,
         `$1$2\n${importLine}\n`
       );
     }
 
-    // 2. Add Bundle import if missing (needed for onCreate parameter)
+    // 2. Add android.os.Bundle import (needed if we have to add onCreate)
     const bundleImport = "import android.os.Bundle";
     if (!contents.includes(bundleImport)) {
       contents = contents.replace(
@@ -24,36 +31,29 @@ module.exports = function withHealthConnectActivity(config) {
       );
     }
 
-    const delegateCall =
-      "HealthConnectPermissionDelegate.setPermissionDelegate(this)";
-
-    // 3a. If onCreate already exists, inject after super.onCreate
-    if (contents.includes("super.onCreate(savedInstanceState)")) {
-      if (!contents.includes(delegateCall)) {
-        contents = contents.replace(
-          /super\.onCreate\(savedInstanceState\)/,
-          `super.onCreate(savedInstanceState)\n    ${delegateCall}`
-        );
-      }
+    // 3a. onCreate exists — inject after ANY super.onCreate(...) call
+    if (contents.includes("fun onCreate(")) {
+      // Match super.onCreate with any argument
+      contents = contents.replace(
+        /(super\.onCreate\([^)]*\))/,
+        `$1\n    ${delegateCall}`
+      );
     } else {
-      // 3b. No onCreate — add a full override before the last closing brace
-      if (!contents.includes(delegateCall)) {
-        const onCreateBlock = [
-          "",
-          "  override fun onCreate(savedInstanceState: Bundle?) {",
-          "    super.onCreate(savedInstanceState)",
-          `    ${delegateCall}`,
-          "  }",
-        ].join("\n");
+      // 3b. No onCreate at all — insert a full override before the last closing brace
+      const onCreateBlock = [
+        "",
+        "  override fun onCreate(savedInstanceState: Bundle?) {",
+        "    super.onCreate(savedInstanceState)",
+        `    ${delegateCall}`,
+        "  }",
+      ].join("\n");
 
-        // Insert before the final closing brace of the class
-        const lastBrace = contents.lastIndexOf("}");
-        contents =
-          contents.slice(0, lastBrace) +
-          onCreateBlock +
-          "\n" +
-          contents.slice(lastBrace);
-      }
+      const lastBrace = contents.lastIndexOf("}");
+      contents =
+        contents.slice(0, lastBrace) +
+        onCreateBlock +
+        "\n" +
+        contents.slice(lastBrace);
     }
 
     mod.modResults.contents = contents;
