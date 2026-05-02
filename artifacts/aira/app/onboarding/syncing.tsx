@@ -51,16 +51,19 @@ export default function SyncingScreen() {
     const run = async () => {
       setStarted(true);
       Animated.timing(ringProgress, { toValue: 30, duration: 800, useNativeDriver: false }).start();
-      const granted = await requestPermissionsAndSync();
-      setDemoMode(!granted);
+      try {
+        const granted = await requestPermissionsAndSync();
+        setDemoMode(!granted);
+      } catch {
+        setDemoMode(true);
+      }
       Animated.timing(ringProgress, { toValue: 100, duration: 1000, useNativeDriver: false }).start(() => {
         Animated.spring(checkScale, { toValue: 1, tension: 60, friction: 7, useNativeDriver: false }).start();
         setDone(true);
       });
     };
 
-    const timer = setTimeout(run, 600);
-    return () => clearTimeout(timer);
+    run();
   }, []);
 
   useEffect(() => {
