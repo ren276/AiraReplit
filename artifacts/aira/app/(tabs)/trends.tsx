@@ -13,7 +13,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import SimpleChart from "@/components/SimpleChart";
 import { useHealth } from "@/context/HealthContext";
 import { useColors } from "@/hooks/useColors";
-import { DailyHealthData } from "@/utils/healthUtils";
+import type { ProcessedDayData } from "@/types/health";
 
 type MetricKey = "sleep" | "heartRate" | "steps" | "hrv";
 
@@ -22,7 +22,7 @@ const METRICS: {
   label: string;
   color: string;
   unit: string;
-  getValue: (d: DailyHealthData) => number;
+  getValue: (d: ProcessedDayData) => number;
   format: (v: number) => string;
 }[] = [
   {
@@ -30,7 +30,7 @@ const METRICS: {
     label: "Sleep",
     color: "#818CF8",
     unit: "hrs",
-    getValue: (d) => d.sleepHours,
+    getValue: (d) => d.metrics.sleepHours ?? 0,
     format: (v) => v.toFixed(1),
   },
   {
@@ -38,7 +38,7 @@ const METRICS: {
     label: "Heart Rate",
     color: "#FF6B6B",
     unit: "bpm",
-    getValue: (d) => d.restingHeartRate,
+    getValue: (d) => d.metrics.restingHeartRate ?? 0,
     format: (v) => Math.round(v).toString(),
   },
   {
@@ -46,7 +46,7 @@ const METRICS: {
     label: "Steps",
     color: "#34D399",
     unit: "steps",
-    getValue: (d) => d.steps,
+    getValue: (d) => d.metrics.steps,
     format: (v) => Math.round(v).toLocaleString(),
   },
   {
@@ -54,7 +54,7 @@ const METRICS: {
     label: "HRV",
     color: "#60A5FA",
     unit: "ms",
-    getValue: (d) => d.hrv,
+    getValue: (d) => d.metrics.hrv ?? 0,
     format: (v) => Math.round(v).toString(),
   },
 ];
@@ -83,9 +83,10 @@ export default function TrendsScreen() {
     return date.toLocaleDateString("en-US", { weekday: "short" }).slice(0, 1);
   });
 
-  const avg = data.reduce((a, b) => a + b, 0) / data.length;
-  const min = Math.min(...data);
-  const max = Math.max(...data);
+  const validData = data.filter((v) => v > 0);
+  const avg = validData.length ? validData.reduce((a, b) => a + b, 0) / validData.length : 0;
+  const min = validData.length ? Math.min(...validData) : 0;
+  const max = validData.length ? Math.max(...validData) : 0;
 
   return (
     <ScrollView
@@ -115,8 +116,7 @@ export default function TrendsScreen() {
             style={[
               styles.pill,
               {
-                backgroundColor:
-                  selected === m.key ? m.color + "22" : colors.card,
+                backgroundColor: selected === m.key ? m.color + "22" : colors.card,
                 borderColor: selected === m.key ? m.color : colors.border,
               },
             ]}
@@ -125,10 +125,8 @@ export default function TrendsScreen() {
               style={[
                 styles.pillText,
                 {
-                  color:
-                    selected === m.key ? m.color : colors.mutedForeground,
-                  fontFamily:
-                    selected === m.key ? "Inter_600SemiBold" : "Inter_400Regular",
+                  color: selected === m.key ? m.color : colors.mutedForeground,
+                  fontFamily: selected === m.key ? "Inter_600SemiBold" : "Inter_400Regular",
                 },
               ]}
             >
@@ -161,9 +159,9 @@ export default function TrendsScreen() {
 
       <View style={styles.statsRow}>
         {[
-          { label: "AVG", value: metric.format(avg) },
-          { label: "MIN", value: metric.format(min) },
-          { label: "MAX", value: metric.format(max) },
+          { label: "AVG", value: avg > 0 ? metric.format(avg) : "--" },
+          { label: "MIN", value: min > 0 ? metric.format(min) : "--" },
+          { label: "MAX", value: max > 0 ? metric.format(max) : "--" },
         ].map((s) => (
           <View
             key={s.label}
@@ -172,17 +170,13 @@ export default function TrendsScreen() {
               { backgroundColor: colors.card, borderColor: colors.border },
             ]}
           >
-            <Text
-              style={[styles.statLabel, { color: colors.mutedForeground }]}
-            >
+            <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>
               {s.label}
             </Text>
             <Text style={[styles.statValue, { color: metric.color }]}>
               {s.value}
             </Text>
-            <Text
-              style={[styles.statUnit, { color: colors.mutedForeground }]}
-            >
+            <Text style={[styles.statUnit, { color: colors.mutedForeground }]}>
               {metric.unit}
             </Text>
           </View>
@@ -198,7 +192,7 @@ export default function TrendsScreen() {
           .slice()
           .reverse()
           .map((day) => {
-            const sc = STATUS_COLORS[day.readinessStatus];
+            const sc = STATUS_COLORS[day.readiness.status];
             const date = new Date(day.date + "T00:00:00");
             const label = date.toLocaleDateString("en-US", {
               weekday: "short",
@@ -210,41 +204,26 @@ export default function TrendsScreen() {
                 key={day.date}
                 style={[
                   styles.historyItem,
-                  {
-                    backgroundColor: colors.card,
-                    borderColor: colors.border,
-                  },
+                  { backgroundColor: colors.card, borderColor: colors.border },
                 ]}
               >
                 <View style={styles.historyLeft}>
-                  <Text
-                    style={[styles.historyDate, { color: colors.foreground }]}
-                  >
+                  <Text style={[styles.historyDate, { color: colors.foreground }]}>
                     {label}
                   </Text>
-                  <Text
-                    style={[styles.historyStatus, { color: sc }]}
-                  >
-                    {day.readinessStatus}
+                  <Text style={[styles.historyStatus, { color: sc }]}>
+                    {day.readiness.status}
                   </Text>
                 </View>
                 <View style={styles.historyRight}>
                   <Text style={[styles.historyScore, { color: sc }]}>
-                    {day.readinessScore}
+                    {day.readiness.score}
                   </Text>
-                  <View
-                    style={[
-                      styles.barTrack,
-                      { backgroundColor: colors.border },
-                    ]}
-                  >
+                  <View style={[styles.barTrack, { backgroundColor: colors.border }]}>
                     <View
                       style={[
                         styles.barFill,
-                        {
-                          width: `${day.readinessScore}%` as any,
-                          backgroundColor: sc,
-                        },
+                        { width: `${day.readiness.score}%` as any, backgroundColor: sc },
                       ]}
                     />
                   </View>
@@ -260,118 +239,27 @@ export default function TrendsScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   content: { flexGrow: 1 },
-  header: {
-    paddingHorizontal: 24,
-    marginBottom: 16,
-    gap: 2,
-  },
-  title: {
-    fontSize: 28,
-    fontFamily: "Inter_700Bold",
-  },
-  subtitle: {
-    fontSize: 13,
-    fontFamily: "Inter_400Regular",
-  },
-  pills: {
-    paddingHorizontal: 24,
-    gap: 8,
-    marginBottom: 16,
-  },
-  pill: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 24,
-    borderWidth: 1,
-  },
-  pillText: {
-    fontSize: 13,
-  },
-  chartCard: {
-    marginHorizontal: 24,
-    borderRadius: 16,
-    padding: 16,
-    borderWidth: 1,
-    marginBottom: 16,
-  },
-  chartTitle: {
-    fontSize: 15,
-    fontFamily: "Inter_600SemiBold",
-    marginBottom: 8,
-  },
-  statsRow: {
-    flexDirection: "row",
-    paddingHorizontal: 24,
-    gap: 12,
-    marginBottom: 24,
-  },
-  statCard: {
-    flex: 1,
-    borderRadius: 14,
-    padding: 14,
-    borderWidth: 1,
-    alignItems: "center",
-    gap: 3,
-  },
-  statLabel: {
-    fontSize: 10,
-    fontFamily: "Inter_600SemiBold",
-    letterSpacing: 1.5,
-  },
-  statValue: {
-    fontSize: 20,
-    fontFamily: "Inter_700Bold",
-  },
-  statUnit: {
-    fontSize: 11,
-    fontFamily: "Inter_400Regular",
-  },
-  section: {
-    paddingHorizontal: 24,
-    gap: 10,
-  },
-  sectionLabel: {
-    fontSize: 11,
-    fontFamily: "Inter_600SemiBold",
-    letterSpacing: 2,
-    marginBottom: 2,
-  },
-  historyItem: {
-    borderRadius: 14,
-    padding: 14,
-    borderWidth: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  historyLeft: {
-    gap: 3,
-  },
-  historyDate: {
-    fontSize: 14,
-    fontFamily: "Inter_500Medium",
-  },
-  historyStatus: {
-    fontSize: 12,
-    fontFamily: "Inter_600SemiBold",
-  },
-  historyRight: {
-    alignItems: "flex-end",
-    gap: 6,
-    minWidth: 80,
-  },
-  historyScore: {
-    fontSize: 22,
-    fontFamily: "Inter_700Bold",
-  },
-  barTrack: {
-    width: 70,
-    height: 4,
-    borderRadius: 2,
-    overflow: "hidden",
-  },
-  barFill: {
-    height: 4,
-    borderRadius: 2,
-  },
+  header: { paddingHorizontal: 24, marginBottom: 16, gap: 2 },
+  title: { fontSize: 28, fontFamily: "Inter_700Bold" },
+  subtitle: { fontSize: 13, fontFamily: "Inter_400Regular" },
+  pills: { paddingHorizontal: 24, gap: 8, marginBottom: 16 },
+  pill: { paddingHorizontal: 16, paddingVertical: 8, borderRadius: 24, borderWidth: 1 },
+  pillText: { fontSize: 13 },
+  chartCard: { marginHorizontal: 24, borderRadius: 16, padding: 16, borderWidth: 1, marginBottom: 16 },
+  chartTitle: { fontSize: 15, fontFamily: "Inter_600SemiBold", marginBottom: 8 },
+  statsRow: { flexDirection: "row", paddingHorizontal: 24, gap: 12, marginBottom: 24 },
+  statCard: { flex: 1, borderRadius: 14, padding: 14, borderWidth: 1, alignItems: "center", gap: 3 },
+  statLabel: { fontSize: 10, fontFamily: "Inter_600SemiBold", letterSpacing: 1.5 },
+  statValue: { fontSize: 20, fontFamily: "Inter_700Bold" },
+  statUnit: { fontSize: 11, fontFamily: "Inter_400Regular" },
+  section: { paddingHorizontal: 24, gap: 10 },
+  sectionLabel: { fontSize: 11, fontFamily: "Inter_600SemiBold", letterSpacing: 2, marginBottom: 2 },
+  historyItem: { borderRadius: 14, padding: 14, borderWidth: 1, flexDirection: "row", alignItems: "center", justifyContent: "space-between" },
+  historyLeft: { gap: 3 },
+  historyDate: { fontSize: 14, fontFamily: "Inter_500Medium" },
+  historyStatus: { fontSize: 12, fontFamily: "Inter_600SemiBold" },
+  historyRight: { alignItems: "flex-end", gap: 6, minWidth: 80 },
+  historyScore: { fontSize: 22, fontFamily: "Inter_700Bold" },
+  barTrack: { width: 70, height: 4, borderRadius: 2, overflow: "hidden" },
+  barFill: { height: 4, borderRadius: 2 },
 });

@@ -14,9 +14,21 @@
       "backgroundColor": "#0A0E17"
     },
     "ios": {
-      "supportsTablet": false
+      "supportsTablet": false,
+      "infoPlist": {
+        "NSHealthShareUsageDescription": "AIRA reads your health data to calculate your daily readiness score.",
+        "NSHealthUpdateUsageDescription": "AIRA does not write health data."
+      }
     },
-    "android": {},
+    "android": {
+      "permissions": [
+        "android.permission.health.READ_HEART_RATE",
+        "android.permission.health.READ_HEART_RATE_VARIABILITY",
+        "android.permission.health.READ_SLEEP",
+        "android.permission.health.READ_STEPS",
+        "android.permission.health.READ_RESTING_HEART_RATE"
+      ]
+    },
     "web": {
       "favicon": "./assets/images/icon.png"
     },
@@ -28,7 +40,19 @@
         }
       ],
       "expo-font",
-      "expo-web-browser"
+      "expo-web-browser",
+      [
+        "react-native-health-connect",
+        {
+          "permissions": [
+            "android.permission.health.READ_HEART_RATE",
+            "android.permission.health.READ_HEART_RATE_VARIABILITY",
+            "android.permission.health.READ_SLEEP",
+            "android.permission.health.READ_STEPS",
+            "android.permission.health.READ_RESTING_HEART_RATE"
+          ]
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true,

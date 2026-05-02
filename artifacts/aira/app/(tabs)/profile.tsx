@@ -1,4 +1,5 @@
 import { Feather } from "@expo/vector-icons";
+import { router } from "expo-router";
 import React, { useState } from "react";
 import {
   Platform,
@@ -12,6 +13,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useHealth } from "@/context/HealthContext";
+import { useOnboarding } from "@/context/OnboardingContext";
 import { useColors } from "@/hooks/useColors";
 
 const DEVICES = [
@@ -54,25 +56,23 @@ function SettingRow({
           {label}
         </Text>
         {subtitle ? (
-          <Text
-            style={[styles.settingSubtitle, { color: colors.mutedForeground }]}
-          >
+          <Text style={[styles.settingSubtitle, { color: colors.mutedForeground }]}>
             {subtitle}
           </Text>
         ) : null}
       </View>
-      {rightElement ?? (
-        onPress ? (
+      {rightElement ??
+        (onPress ? (
           <Feather name="chevron-right" size={16} color={colors.mutedForeground} />
-        ) : null
-      )}
+        ) : null)}
     </TouchableOpacity>
   );
 }
 
 export default function ProfileScreen() {
   const colors = useColors();
-  const { today, history } = useHealth();
+  const { today, history, isDemoMode, hasPermissions, requestPermissionsAndSync } = useHealth();
+  const { resetOnboarding } = useOnboarding();
   const insets = useSafeAreaInsets();
 
   const [selectedDevice, setSelectedDevice] = useState("cmf");
@@ -83,10 +83,17 @@ export default function ProfileScreen() {
   const topPad = Platform.OS === "web" ? 67 : insets.top + 8;
   const bottomPad = Platform.OS === "web" ? 34 : 0;
 
-  const streakDays = history.filter((d) => d.readinessScore >= 45).length;
-  const avgScore = Math.round(
-    history.reduce((a, b) => a + b.readinessScore, 0) / history.length
-  );
+  const streakDays = history.filter((d) => d.readiness.score >= 45).length;
+  const avgScore = history.length
+    ? Math.round(history.reduce((a, b) => a + b.readiness.score, 0) / history.length)
+    : 0;
+  const todayScore = today?.readiness.score ?? 0;
+  const todayStatus = today?.readiness.status ?? "Fair";
+
+  const handleResetOnboarding = async () => {
+    await resetOnboarding();
+    router.replace("/onboarding/welcome");
+  };
 
   return (
     <ScrollView
@@ -98,14 +105,15 @@ export default function ProfileScreen() {
       showsVerticalScrollIndicator={false}
     >
       <View style={styles.header}>
-        <Text style={[styles.title, { color: colors.foreground }]}>
-          Profile
-        </Text>
+        <Text style={[styles.title, { color: colors.foreground }]}>Profile</Text>
       </View>
 
       <View style={styles.profileCard}>
         <View
-          style={[styles.avatar, { backgroundColor: "#00D4AA" + "22", borderColor: "#00D4AA" + "40" }]}
+          style={[
+            styles.avatar,
+            { backgroundColor: "#00D4AA22", borderColor: "#00D4AA40" },
+          ]}
         >
           <Text style={[styles.avatarText, { color: "#00D4AA" }]}>A</Text>
         </View>
@@ -114,26 +122,41 @@ export default function ProfileScreen() {
             Arjun
           </Text>
           <Text style={[styles.profileSince, { color: colors.mutedForeground }]}>
-            AIRA user since May 2026
+            {isDemoMode ? "Demo Mode — no wearable linked" : "Health data connected"}
           </Text>
         </View>
       </View>
 
+      {isDemoMode && (
+        <TouchableOpacity
+          style={styles.connectBanner}
+          onPress={requestPermissionsAndSync}
+          activeOpacity={0.8}
+        >
+          <Feather name="bluetooth" size={16} color="#00D4AA" />
+          <View style={styles.connectBannerText}>
+            <Text style={[styles.connectTitle, { color: colors.foreground }]}>
+              Connect your wearable
+            </Text>
+            <Text style={[styles.connectSub, { color: colors.mutedForeground }]}>
+              Grant Health Connect access for real data
+            </Text>
+          </View>
+          <Feather name="chevron-right" size={16} color="#00D4AA" />
+        </TouchableOpacity>
+      )}
+
       <View style={styles.statsRow}>
         {[
           { label: "Avg Score", value: avgScore.toString(), color: "#00D4AA" },
-          {
-            label: "Active Days",
-            value: streakDays.toString(),
-            color: "#818CF8",
-          },
+          { label: "Active Days", value: streakDays.toString(), color: "#818CF8" },
           {
             label: "Today",
-            value: today.readinessScore.toString(),
+            value: todayScore.toString(),
             color:
-              today.readinessStatus === "Good"
+              todayStatus === "Good"
                 ? "#22C55E"
-                : today.readinessStatus === "Fair"
+                : todayStatus === "Fair"
                   ? "#F59E0B"
                   : "#EF4444",
           },
@@ -145,9 +168,7 @@ export default function ProfileScreen() {
               { backgroundColor: colors.card, borderColor: colors.border },
             ]}
           >
-            <Text style={[styles.statValue, { color: s.color }]}>
-              {s.value}
-            </Text>
+            <Text style={[styles.statValue, { color: s.color }]}>{s.value}</Text>
             <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>
               {s.label}
             </Text>
@@ -178,23 +199,15 @@ export default function ProfileScreen() {
               ]}
             >
               <View style={styles.deviceLeft}>
-                <Feather
-                  name={device.icon}
-                  size={15}
-                  color={colors.mutedForeground}
-                />
-                <Text
-                  style={[styles.deviceName, { color: colors.foreground }]}
-                >
+                <Feather name={device.icon} size={15} color={colors.mutedForeground} />
+                <Text style={[styles.deviceName, { color: colors.foreground }]}>
                   {device.name}
                 </Text>
               </View>
               {selectedDevice === device.id ? (
                 <Feather name="check-circle" size={18} color="#00D4AA" />
               ) : (
-                <View
-                  style={[styles.emptyCircle, { borderColor: colors.border }]}
-                />
+                <View style={[styles.emptyCircle, { borderColor: colors.border }]} />
               )}
             </TouchableOpacity>
           ))}
@@ -212,13 +225,7 @@ export default function ProfileScreen() {
           ]}
         >
           <View
-            style={[
-              styles.toggleRow,
-              {
-                borderBottomWidth: 1,
-                borderBottomColor: colors.border,
-              },
-            ]}
+            style={[styles.toggleRow, { borderBottomWidth: 1, borderBottomColor: colors.border }]}
           >
             <Text style={[styles.toggleLabel, { color: colors.foreground }]}>
               Push Notifications
@@ -255,13 +262,7 @@ export default function ProfileScreen() {
           ]}
         >
           <View
-            style={[
-              styles.toggleRow,
-              {
-                borderBottomWidth: 1,
-                borderBottomColor: colors.border,
-              },
-            ]}
+            style={[styles.toggleRow, { borderBottomWidth: 1, borderBottomColor: colors.border }]}
           >
             <Text style={[styles.toggleLabel, { color: colors.foreground }]}>
               Auto-Sync
@@ -274,10 +275,16 @@ export default function ProfileScreen() {
             />
           </View>
           <SettingRow
+            icon="refresh-cw"
+            label="Sync Now"
+            subtitle="Fetch latest health data"
+            onPress={requestPermissionsAndSync}
+          />
+          <SettingRow
             icon="shield"
             label="Health Permissions"
-            subtitle="Manage data access"
-            onPress={() => {}}
+            subtitle={hasPermissions ? "Connected" : "Not connected"}
+            onPress={requestPermissionsAndSync}
           />
         </View>
       </View>
@@ -292,20 +299,14 @@ export default function ProfileScreen() {
             { backgroundColor: colors.card, borderColor: colors.border },
           ]}
         >
+          <SettingRow icon="info" label="AIRA" subtitle="Version 1.0.0" />
+          <SettingRow icon="file-text" label="Privacy Policy" onPress={() => {}} />
+          <SettingRow icon="star" label="Rate AIRA" onPress={() => {}} />
           <SettingRow
-            icon="info"
-            label="AIRA"
-            subtitle="Version 1.0.0"
-          />
-          <SettingRow
-            icon="file-text"
-            label="Privacy Policy"
-            onPress={() => {}}
-          />
-          <SettingRow
-            icon="star"
-            label="Rate AIRA"
-            onPress={() => {}}
+            icon="rotate-ccw"
+            label="Reset Onboarding"
+            subtitle="See the setup flow again"
+            onPress={handleResetOnboarding}
           />
         </View>
       </View>
@@ -325,148 +326,47 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   content: { flexGrow: 1 },
-  header: {
-    paddingHorizontal: 24,
-    marginBottom: 16,
-  },
-  title: {
-    fontSize: 28,
-    fontFamily: "Inter_700Bold",
-  },
-  profileCard: {
+  header: { paddingHorizontal: 24, marginBottom: 16 },
+  title: { fontSize: 28, fontFamily: "Inter_700Bold" },
+  profileCard: { flexDirection: "row", alignItems: "center", paddingHorizontal: 24, marginBottom: 20, gap: 16 },
+  avatar: { width: 60, height: 60, borderRadius: 30, alignItems: "center", justifyContent: "center", borderWidth: 2 },
+  avatarText: { fontSize: 26, fontFamily: "Inter_700Bold" },
+  profileInfo: { gap: 4 },
+  profileName: { fontSize: 22, fontFamily: "Inter_700Bold" },
+  profileSince: { fontSize: 12, fontFamily: "Inter_400Regular" },
+  connectBanner: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 24,
-    marginBottom: 20,
-    gap: 16,
-  },
-  avatar: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    alignItems: "center",
-    justifyContent: "center",
-    borderWidth: 2,
-  },
-  avatarText: {
-    fontSize: 26,
-    fontFamily: "Inter_700Bold",
-  },
-  profileInfo: {
-    gap: 4,
-  },
-  profileName: {
-    fontSize: 22,
-    fontFamily: "Inter_700Bold",
-  },
-  profileSince: {
-    fontSize: 12,
-    fontFamily: "Inter_400Regular",
-  },
-  statsRow: {
-    flexDirection: "row",
-    paddingHorizontal: 24,
     gap: 12,
-    marginBottom: 24,
-  },
-  statCard: {
-    flex: 1,
-    borderRadius: 14,
-    padding: 14,
-    borderWidth: 1,
-    alignItems: "center",
-    gap: 4,
-  },
-  statValue: {
-    fontSize: 22,
-    fontFamily: "Inter_700Bold",
-  },
-  statLabel: {
-    fontSize: 10,
-    fontFamily: "Inter_500Medium",
-    textAlign: "center",
-  },
-  section: {
-    paddingHorizontal: 24,
+    marginHorizontal: 24,
     marginBottom: 20,
-    gap: 10,
-  },
-  sectionLabel: {
-    fontSize: 11,
-    fontFamily: "Inter_600SemiBold",
-    letterSpacing: 2,
-  },
-  groupCard: {
+    padding: 16,
     borderRadius: 16,
     borderWidth: 1,
-    overflow: "hidden",
+    borderColor: "#00D4AA30",
+    backgroundColor: "#00D4AA0D",
   },
-  deviceRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 14,
-  },
-  deviceLeft: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
-  },
-  deviceName: {
-    fontSize: 14,
-    fontFamily: "Inter_500Medium",
-  },
-  emptyCircle: {
-    width: 18,
-    height: 18,
-    borderRadius: 9,
-    borderWidth: 1.5,
-  },
-  toggleRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 14,
-  },
-  toggleLabel: {
-    fontSize: 14,
-    fontFamily: "Inter_500Medium",
-  },
-  settingRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 14,
-    gap: 12,
-    borderTopWidth: 1,
-  },
-  settingIcon: {
-    width: 32,
-    height: 32,
-    borderRadius: 8,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  settingText: {
-    flex: 1,
-    gap: 2,
-  },
-  settingLabel: {
-    fontSize: 14,
-    fontFamily: "Inter_500Medium",
-  },
-  settingSubtitle: {
-    fontSize: 12,
-    fontFamily: "Inter_400Regular",
-  },
-  tagline: {
-    alignItems: "center",
-    paddingHorizontal: 24,
-    paddingTop: 8,
-    gap: 4,
-  },
-  taglineText: {
-    fontSize: 12,
-    fontFamily: "Inter_400Regular",
-    textAlign: "center",
-  },
+  connectBannerText: { flex: 1 },
+  connectTitle: { fontSize: 14, fontFamily: "Inter_600SemiBold" },
+  connectSub: { fontSize: 12, fontFamily: "Inter_400Regular" },
+  statsRow: { flexDirection: "row", paddingHorizontal: 24, gap: 12, marginBottom: 24 },
+  statCard: { flex: 1, borderRadius: 14, padding: 14, borderWidth: 1, alignItems: "center", gap: 4 },
+  statValue: { fontSize: 22, fontFamily: "Inter_700Bold" },
+  statLabel: { fontSize: 10, fontFamily: "Inter_500Medium", textAlign: "center" },
+  section: { paddingHorizontal: 24, marginBottom: 20, gap: 10 },
+  sectionLabel: { fontSize: 11, fontFamily: "Inter_600SemiBold", letterSpacing: 2 },
+  groupCard: { borderRadius: 16, borderWidth: 1, overflow: "hidden" },
+  deviceRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", padding: 14 },
+  deviceLeft: { flexDirection: "row", alignItems: "center", gap: 10 },
+  deviceName: { fontSize: 14, fontFamily: "Inter_500Medium" },
+  emptyCircle: { width: 18, height: 18, borderRadius: 9, borderWidth: 1.5 },
+  toggleRow: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", padding: 14 },
+  toggleLabel: { fontSize: 14, fontFamily: "Inter_500Medium" },
+  settingRow: { flexDirection: "row", alignItems: "center", padding: 14, gap: 12, borderTopWidth: 1 },
+  settingIcon: { width: 32, height: 32, borderRadius: 8, alignItems: "center", justifyContent: "center" },
+  settingText: { flex: 1, gap: 2 },
+  settingLabel: { fontSize: 14, fontFamily: "Inter_500Medium" },
+  settingSubtitle: { fontSize: 12, fontFamily: "Inter_400Regular" },
+  tagline: { alignItems: "center", paddingHorizontal: 24, paddingTop: 8, gap: 4 },
+  taglineText: { fontSize: 12, fontFamily: "Inter_400Regular", textAlign: "center" },
 });
