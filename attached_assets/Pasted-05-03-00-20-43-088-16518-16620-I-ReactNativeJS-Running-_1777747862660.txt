@@ -1,0 +1,16 @@
+05-03 00:20:43.088 16518 16620 I ReactNativeJS: Running "main" with {"rootTag":1,"initialProps":{},"fabric":true}
+05-03 00:20:44.316 16518 16518 I ReactNative: [GESTURE HANDLER] Initialize gesture handler for root view com.facebook.react.runtime.ReactSurfaceView{f3e7c7 V.E...... ......ID 0,0-1080,2400 #1}
+05-03 00:20:49.813 16518 16629 E AndroidRuntime: FATAL EXCEPTION: DefaultDispatcher-worker-2
+05-03 00:20:49.813 16518 16629 E AndroidRuntime: Process: com.aira.health, PID: 16518
+05-03 00:20:49.813 16518 16629 E AndroidRuntime: kotlin.UninitializedPropertyAccessException: lateinit property requestPermission has not been initialized
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at dev.matinzd.healthconnect.permissions.HealthConnectPermissionDelegate.launchPermissionsDialog(HealthConnectPermissionDelegate.kt:45)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at dev.matinzd.healthconnect.HealthConnectManager$requestPermission$1$1.invokeSuspend(HealthConnectManager.kt:72)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:101)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlinx.coroutines.internal.LimitedDispatcher$Worker.run(LimitedDispatcher.kt:113)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlinx.coroutines.scheduling.TaskImpl.run(Tasks.kt:89)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:589)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:823)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:720)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:707)
+05-03 00:20:49.813 16518 16629 E AndroidRuntime:        Suppressed: kotlinx.coroutines.internal.DiagnosticCoroutineContextException: [StandaloneCoroutine{Cancelling}@699ac45, Dispatchers.IO]
