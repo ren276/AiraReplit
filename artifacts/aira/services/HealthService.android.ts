@@ -26,7 +26,6 @@ function mapStage(stage: HealthConnectStage): SleepStageEntry["stage"] {
 }
 
 const PERMISSIONS = [
-  { accessType: "read" as const, recordType: "HeartRateVariabilitySdnn" as const },
   { accessType: "read" as const, recordType: "HeartRate" as const },
   { accessType: "read" as const, recordType: "RestingHeartRate" as const },
   { accessType: "read" as const, recordType: "SleepSession" as const },
