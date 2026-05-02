@@ -1,0 +1,108 @@
+(base) PS E:\AiraReplit\artifacts\aira> npx expo run:android
+› Building app...
+Configuration on demand is an incubating feature.
+
+> Configure project :
+[ExpoRootProject] Using the following versions:
+  - buildTools:  36.0.0
+  - minSdk:      24
+  - compileSdk:  36
+  - targetSdk:   36
+  - ndk:         27.1.12297006
+  - kotlin:      2.1.20
+  - ksp:         2.1.20-2.0.1
+
+> Configure project :expo
+
+Using expo modules
+  - expo-constants (18.0.13)
+  - expo-modules-core (3.0.30)
+  - [≡ƒôª] expo-asset (12.0.13)
+  - [≡ƒôª] expo-blur (15.0.8)
+  - [≡ƒôª] expo-file-system (19.0.22)
+  - [≡ƒôª] expo-font (14.0.11)
+  - [≡ƒôª] expo-haptics (15.0.8)
+  - [≡ƒôª] expo-image (3.0.11)
+  - [≡ƒôª] expo-image-loader (6.0.0)
+  - [≡ƒôª] expo-image-picker (17.0.11)
+  - [≡ƒôª] expo-keep-awake (15.0.8)
+  - [≡ƒôª] expo-linear-gradient (15.0.8)
+  - [≡ƒôª] expo-linking (8.0.12)
+  - [≡ƒôª] expo-location (19.0.8)
+  - [≡ƒôª] expo-splash-screen (31.0.13)
+  - [≡ƒôª] expo-system-ui (6.0.9)
+  - [≡ƒôª] expo-web-browser (15.0.11)
+
+
+> Task :react-native-screens:configureCMakeDebug[arm64-v8a]
+[CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+[CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+
+> Task :app:processDebugMainManifest FAILED
+E:\AiraReplit\artifacts\aira\android\app\src\debug\AndroidManifest.xml Error:
+        uses-sdk:minSdkVersion 24 cannot be smaller than version 26 declared in library [androidx.health.connect:connect-client:1.1.0-alpha11] C:\Users\sande\.gradle\caches\8.14.3\transforms\a5a6cb84d4e6d0e3030d168bd9e27bf8\transformed\connect-client-1.1.0-alpha11\AndroidManifest.xml as the library might be using APIs not available in 24
+        Suggestion: use a compatible library with a minSdk of at most 24,
+                or increase this project's minSdk version to at least 26,
+                or use tools:overrideLibrary="androidx.health.connect.client" to force usage (may lead to runtime failures)
+
+See https://developer.android.com/r/studio-ui/build/manifest-merger for more information about the manifest merger.
+
+
+> Task :react-native-screens:configureCMakeDebug[arm64-v8a]
+C/C++: CMake Warning in CMakeLists.txt:
+C/C++:   The object file directory
+C/C++:     E:/AiraReplit/node_modules/.pnpm/react-native-screens@4.16.0_b8e1d3cca370dcdbbdf08944ff9ffe9a/node_modules/react-native-screens/android/.cxx/Debug/114g2e11/arm64-v8a/CMakeFiles/rnscreens.dir/./
+C/C++:   has 193 characters.  The maximum full path to an object file is 250
+C/C++:   characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+C/C++:     E_/AiraReplit/node_modules/.pnpm/react-native-screens@4.16.0_b8e1d3cca370dcdbbdf08944ff9ffe9a/node_modules/react-native-screens/cpp/RNSScreenRemovalListener.cpp.o
+C/C++:   cannot be safely placed under this directory.  The build may not work
+C/C++:   correctly.
+
+> Task :react-native-worklets:configureCMakeDebug[arm64-v8a]
+C/C++: CMake Warning in CMakeLists.txt:
+C/C++:   The object file directory
+C/C++:     E:/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/android/.cxx/Debug/592e6p64/arm64-v8a/CMakeFiles/worklets.dir/./
+C/C++:   has 193 characters.  The maximum full path to an object file is 250
+C/C++:   characters (see CMAKE_OBJECT_PATH_MAX).  Object file
+C/C++:     E_/AiraReplit/node_modules/.pnpm/react-native-worklets@0.5.1_e33ee53926cb739c160046f5657a922f/node_modules/react-native-worklets/Common/cpp/worklets/NativeModules/WorkletsModuleProxy.cpp.o
+C/C++:   cannot be safely placed under this directory.  The build may not work
+C/C++:   correctly.
+
+[Incubating] Problems report is available at: file:///E:/AiraReplit/artifacts/aira/android/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:processDebugMainManifest'.
+> Manifest merger failed : uses-sdk:minSdkVersion 24 cannot be smaller than version 26 declared in library [androidx.health.connect:connect-client:1.1.0-alpha11] C:\Users\sande\.gradle\caches\8.14.3\transforms\a5a6cb84d4e6d0e3030d168bd9e27bf8\transformed\connect-client-1.1.0-alpha11\AndroidManifest.xml as the library might be using APIs not available in 24
+        Suggestion: use a compatible library with a minSdk of at most 24,
+                or increase this project's minSdk version to at least 26,
+                or use tools:overrideLibrary="androidx.health.connect.client" to force usage (may lead to runtime failures)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 33s
+283 actionable tasks: 115 executed, 144 from cache, 24 up-to-date
+Error: E:\AiraReplit\artifacts\aira\android\gradlew.bat app:assembleDebug -x lint -x test --configure-on-demand --build-cache -PreactNativeDevServerPort=8081 -PreactNativeArchitectures=arm64-v8a,armeabi-v7a exited with non-zero code: 1
+Error: E:\AiraReplit\artifacts\aira\android\gradlew.bat app:assembleDebug -x lint -x test --configure-on-demand --build-cache -PreactNativeDevServerPort=8081 -PreactNativeArchitectures=arm64-v8a,armeabi-v7a exited with non-zero code: 1
+    at ChildProcess.completionListener (E:\AiraReplit\node_modules\.pnpm\@expo+spawn-async@1.7.2\node_modules\@expo\spawn-async\src\spawnAsync.ts:67:13)
+    at Object.onceWrapper (node:events:633:26)
+    at ChildProcess.emit (node:events:518:28)
+    at ChildProcess.cp.emit (E:\AiraReplit\node_modules\.pnpm\cross-spawn@7.0.6\node_modules\cross-spawn\lib\enoent.js:34:29)
+    at maybeClose (node:internal/child_process:1101:16)
+    at Process.ChildProcess._handle.onexit (node:internal/child_process:304:5)
+    ...
+    at spawnAsync (E:\AiraReplit\node_modules\.pnpm\@expo+spawn-async@1.7.2\node_modules\@expo\spawn-async\src\spawnAsync.ts:28:21)
+    at spawnGradleAsync (E:\AiraReplit\node_modules\.pnpm\@expo+cli@54.0.24_expo-rout_a5b3c719bb5ccdac93692d80fc3c093b\node_modules\@expo\cli\src\start\platforms\android\gradle.ts:134:28)                                                                                                                                                                             
+    at assembleAsync (E:\AiraReplit\node_modules\.pnpm\@expo+cli@54.0.24_expo-rout_a5b3c719bb5ccdac93692d80fc3c093b\node_modules\@expo\cli\src\start\platforms\android\gradle.ts:83:16)                                                                                                                                                                                 
+    at runAndroidAsync (E:\AiraReplit\node_modules\.pnpm\@expo+cli@54.0.24_expo-rout_a5b3c719bb5ccdac93692d80fc3c093b\node_modules\@expo\cli\src\run\android\runAndroidAsync.ts:62:24)  
